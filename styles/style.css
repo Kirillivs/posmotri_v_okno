@@ -58,11 +58,9 @@ video {
   justify-content: center;
   background-color: #1B1919;
   color: #fff;
-  font-family: "Fira Sans Condensed", Arial, Helvetica, sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
 }
-
-
 
 .content {
   display: flex;
@@ -91,8 +89,6 @@ video {
   object-fit: cover;
   object-position: center;
 }
-
-
 
 .search-form {
   display: flex;
@@ -124,10 +120,11 @@ video {
 .search-form__textfield {
   width: 225px;
   height: 27px;
-  background-color: transparent;
   border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -135,16 +132,37 @@ video {
   appearance: none;
 }
 
+.search-form__textfield::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
 }
 
-
 .search-form__pseudo-checkbox {
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__label:has(.search-form__pseudo-checkbox):has(:hover) {
+  text-decoration: underline;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  background-color: #FFF;
+  inline-size: 15px;
+  block-size: 15px;
+  margin: 1px 0 0 1px;
 }
 
 .button {
@@ -160,35 +178,47 @@ video {
   cursor: pointer;
 } 
 
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+}
+
 .search-form__submit-button {
   width: 194px;
   align-self: end;
 }
 
-
-
-
 .content__details {
-  padding-top: 2px;
-  inline-size: 100%;
-  block-size: 100%;
   display: flex;
   flex-direction: column;
   gap: 26px;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .title {
   font-size: 75px;
   font-weight: 700;
   line-height: 70.5px;
-  font-family: Oswald, sans-serif;
+  font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   color: #fff;
 }
 
 .content__accent {
   color: #545050;
-
 }
 
 .content__list {
@@ -205,11 +235,24 @@ video {
   color: #fff;
 }
 
-.content__card-link_current {
+.content__card-link:active {
   background-color: #545050;
 }
-.content__list-item {
 
+.content__card-link:hover {
+  text-decoration: underline 1px #FFF;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #FFF;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
 
 .content__list-item:not(:last-child) {
@@ -217,26 +260,23 @@ video {
 }
 
 .content__video-card {
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .content__video-card-title {
-  font-family: Oswald, sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 30px;
-  line-height: 100%;
-  text-transform: uppercase;
-
   line-height: 30px;
+  text-transform: uppercase;
 }
 
 .content__video-card-description {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
-  line-height: 90%;
-  /*line-height: 16.2px;*/
+  line-height: 16.2px;
 }
 
 .content__video-card-thumbnail {
@@ -257,3 +297,8 @@ justify-content: space-between;
 .more-button {
   width: 399px;
 }
+
+
+
+
+
