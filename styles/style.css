@@ -51,17 +51,6 @@ video {
   white-space: nowrap;
 }
 
-.page {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #1B1919;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-}
-
 .content {
   display: flex;
   align-items: end;
@@ -225,7 +214,7 @@ video {
   position: relative;
   overflow-y: scroll;
   block-size: 298px;
-  scrollbar-width: none;
+  inline-size: 399px;
 }
 
 .content__card-link {
@@ -270,6 +259,10 @@ video {
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 192px;
 }
 
 .content__video-card-description {
