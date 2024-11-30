@@ -215,6 +215,9 @@ video {
   overflow-y: scroll;
   block-size: 298px;
   inline-size: 399px;
+  min-block-size: 298px;
+  min-inline-size: 399px;
+  overflow-x: hidden;
 }
 
 .content__card-link {
