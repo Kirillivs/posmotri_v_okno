@@ -212,12 +212,10 @@ video {
 
 .content__list {
   position: relative;
+  max-block-size: 298px;
   overflow-y: scroll;
-  block-size: 298px;
-  inline-size: 399px;
-  min-block-size: 298px;
-  min-inline-size: 399px;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .content__card-link {
